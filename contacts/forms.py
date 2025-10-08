@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import AuthenticationForm
 
-from . import Contacts
+from .models import Contacts
 
 
 
@@ -27,6 +28,11 @@ class UserRegistrationForm(forms.ModelForm):
             Contacts.objects.create(
                 name = user.username,
                 email = user.email,
-                number = user.phone,
-                role = self.cleaned_data['phone']
+                number = self.cleaned_data['phone'],
+                role = 'user'
             )
+            return user
+        
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))

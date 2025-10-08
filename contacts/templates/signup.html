@@ -7,19 +7,12 @@
 </head>
 <body>
     <h1>Sign up</h1>
-    <form>
+    <form action="" method="post">
         {% csrf_token %}
-        <label>Name</label>
-        <input type="text">
-        <label>Email</label>
-        <input type="email">
-        <label>Contact no</label>
-        <input type="number">
-        <label>Password</label>
-        <input type="password">
-        <label> Confirm Password</label>
-        <input type="password">
+        {{form.as_p}}
+        <button>Submit</button>
     </form>
-    <button>Submit</button>
+    
+    <p>Already have an account ?<a href="{% url 'login' %}">login</a></p>
 </body>
 </html>
