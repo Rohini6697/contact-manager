@@ -55,11 +55,12 @@ def delete_contact(request,id):
 
 def update_contact(request,id):
     contact = get_object_or_404(Contacts,id=id)
-    if request.method == 'post':
-        name = request.POST.get('name')
-        number = request.POST.get('number')
+    if request.method == 'POST':
+        name = request.POST.get('user_name')
+        number = request.POST.get('user_number')
         contact.name = name
         contact.number = number
         contact.save()
         return redirect('home')
-    return render(request,'home.html',{'contact':contact})
+    # return render(request,'home.html',{'contact':contact})
+    return render(request,'updatecontact.html',{'contact':contact})
