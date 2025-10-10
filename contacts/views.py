@@ -65,6 +65,11 @@ def delete_contact(request,id):
     delete_contact.delete()
     return redirect('home')
 
+def delete_user(request,id):
+    delete_contact = User.objects.get(id=id)
+    delete_contact.delete()
+    return redirect(request,'userlist')
+
 def update_contact(request,id):
     contact = get_object_or_404(Contacts,id=id)
     if request.method == 'POST':
@@ -73,6 +78,9 @@ def update_contact(request,id):
         contact.name = name
         contact.number = number
         contact.save()
+        # if request.user.is_superuser:
+        #     return redirect('userslist')
+        # else:
         return redirect('home')
     # return render(request,'home.html',{'contact':contact})
     return render(request,'updatecontact.html',{'contact':contact})
@@ -85,13 +93,16 @@ def userslist(request):
     users_only = User.objects.filter(is_superuser=False)
     userslist = []
     for user in users_only:
-        contact = Contacts.objects.filter(user=user).first()
+        
+        contact = user.contacts.first() if hasattr(user, 'contacts') else None
+
         userslist.append({
             'user_id':user.id,
             'username':user.username,
             'email':user.email,
-            'phone':user.phonenumber,
-            'contact_id':contact.id if contact else None,   
+            'phone':user.phonenumber if user.phonenumber else None,
+            'contact_id':contact.id if contact else 0,  
+            'super_user':user.is_superuser, 
         })
 
 

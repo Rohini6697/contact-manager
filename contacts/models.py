@@ -6,7 +6,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class User(AbstractUser):
-    phonenumber = models.CharField(max_length=20,blank=False,null=False)
+    phonenumber = models.CharField(max_length=20,blank=True,null=True)
 
 class Contacts(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,blank=False,null=False)

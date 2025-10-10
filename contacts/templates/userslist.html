@@ -24,14 +24,16 @@
         <table border="1">
             <tr>
                 <th>Name</th>
+                <th>Email</th>
                 <th>Number</th>
                 <th>Edit</th>
             </tr>
             {% for x in userslist %}
                 <tr>
                     <td>{{x.username}}</td>
+                    <td>{{x.email}}</td>
                     <td>{{x.phone}}</td>
-                    <td><button>Update</button><button>Delete</button></td>
+                    <td><a href="{% url 'update_contact' x.user_id %}"><button>Update</button></a><a href="{% url 'delete_user' x.id %}"><button>Delete</button></a></td>
                 </tr>
             {% endfor %}
         </table>
