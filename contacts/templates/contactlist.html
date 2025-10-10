@@ -21,14 +21,21 @@
         </ul>
     </div>
     <div class="content">
-        <div>
-            <h2>Registered Users</h2>
-            <h1>{{user_count}}</h1>
-        </div>
-        <div>
-            <h2>Total Contacts</h2>
-            <h1>{{contact_count}}</h1>
-        </div>
+        <!-- <h1>contact list</h1> -->
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Edit</th>
+            </tr>
+            {% for x in contactlist %}
+                <tr>
+                    <td>{{x.name}}</td>
+                    <td>{{x.number}}</td>
+                    <td><button>Update</button><button>Delete</button></td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
 </body>
 </html>

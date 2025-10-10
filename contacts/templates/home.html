@@ -7,7 +7,7 @@
 </head>
 <body>
     <nav>
-        <h1>welcome</h1>
+        <h1>welcome,{{request.user.username}}</h1>
         <button><a href="{% url 'login' %}">Log Out</a></button>
     </nav>
 
