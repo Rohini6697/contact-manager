@@ -63,12 +63,17 @@ def add_new_contact(request):
 def delete_contact(request,id):
     delete_contact = Contacts.objects.get(id=id)
     delete_contact.delete()
-    return redirect('home')
+    if request.user.is_superuser:
+        return redirect('contactlist')
+    else:
+        return redirect('home')
 
 def delete_user(request,id):
     delete_contact = User.objects.get(id=id)
     delete_contact.delete()
-    return redirect(request,'userlist')
+    return redirect('userslist')
+
+    
 
 def update_contact(request,id):
     contact = get_object_or_404(Contacts,id=id)
@@ -78,12 +83,26 @@ def update_contact(request,id):
         contact.name = name
         contact.number = number
         contact.save()
-        # if request.user.is_superuser:
-        #     return redirect('userslist')
-        # else:
-        return redirect('home')
-    # return render(request,'home.html',{'contact':contact})
+        if request.user.is_superuser:
+            return redirect('contactlist')
+        else:
+            return redirect('home')
     return render(request,'updatecontact.html',{'contact':contact})
+
+def update_user(request,id):
+    user = get_object_or_404(User,id=id)
+    if request.method == 'POST':
+        name = request.POST.get('user_name')
+        number = request.POST.get('user_number')
+        user.username = name
+        user.phonenumber = number
+        user.save()
+        return redirect('userslist')
+        
+    return render(request,'updateuser.html',{'user':user})
+
+
+
 
 def contactlist(request):
     contactlist = Contacts.objects.all().values()

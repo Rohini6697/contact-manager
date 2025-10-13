@@ -12,18 +12,12 @@
     <form method="post">
         {% csrf_token %}
         <label>Name</label>
-        <input type="text" name="user_name" value="{{contact.name}}">
+        <input type="text" name="user_name" value="{{user.username}}">
         <label>Contact no</label>
-        <input type="number" name="user_number" value="{{contact.number}}">
+        <input type="number" name="user_number" value="{{user.phonenumber}}">
         <button>Update</button>
     </form>
-    <button><a 
-        if request.user.is_superuser:
-            href="{% url 'userslist' %}"
-        else:
-            href="{% url 'home' %}"        
-        
-        >Go back</a></button>
+    <button><a href="{% url 'userslist' %}">Go back</a></button>
     
 </body>
 </html>

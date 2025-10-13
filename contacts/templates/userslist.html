@@ -33,7 +33,7 @@
                     <td>{{x.username}}</td>
                     <td>{{x.email}}</td>
                     <td>{{x.phone}}</td>
-                    <td><a href="{% url 'update_contact' x.user_id %}"><button>Update</button></a><a href="{% url 'delete_user' x.id %}"><button>Delete</button></a></td>
+                    <td><a href="{% url 'update_user' x.user_id %}"><button>Update</button></a><a href="{% url 'delete_user' x.user_id%}"><button>Delete</button></a></td>
                 </tr>
             {% endfor %}
         </table>

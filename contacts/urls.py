@@ -15,7 +15,8 @@ urlpatterns = [
     path('contactlist/',views.contactlist,name='contactlist'),
     path('userslist/',views.userslist,name='userslist'),
     path('profile/',views.profile,name='profile'),
-    path('delete_userlist/<int:id>',views.delete_user,name='delete_user')
+    path('delete_userlist/<int:id>',views.delete_user,name='delete_user'),
+    path('update_user/<int:id>',views.update_user,name='update_user')
 ]
 
 
