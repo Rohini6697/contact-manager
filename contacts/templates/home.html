@@ -1,39 +1,42 @@
- <!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
     <nav>
-        <h1>welcome,{{request.user.username}}</h1>
-        <button><a href="{% url 'login' %}">Log Out</a></button>
+        <h1>Welcome, {{ request.user.username }}</h1>
+        <a href="{% url 'login' %}" class="logout-btn">Log Out</a>
     </nav>
 
-    <container class="">
-        <button><a href="{% url 'addcontact' %}">Add Contact</a></button>
+    <div class="container">
+        <a href="{% url 'addcontact' %}" class="add-btn">Add Contact</a>
         
-        <table border="1">
-            <tr>
-                <th>Name</th>
-                <th>Contact Number</th>
-                <th>Edit</th>
-            </tr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
             {% for x in contact_list %}
-            <tr>
-                <td>{{x.name}}</td>
-                <td>{{x.number}}</td>
-                <td>
-                    
-                    <a href="{% url 'update_contact' x.id %}"><button>Update</button></a>
-                    <a href="{% url 'delete_contact' x.id %}"><button>Delete</button></a>
-                </td>
-            </tr>
+                <tr>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.number }}</td>
+                    <td>
+                        <a href="{% url 'update_contact' x.id %}" class="update-btn">Update</a>
+                        <a href="{% url 'delete_contact' x.id %}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
             {% endfor %}
+            </tbody>
         </table>
-    </container>
-
-    
+    </div>
 </body>
 </html>

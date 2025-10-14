@@ -87,31 +87,28 @@ body {
 .content {
     padding: 40px;
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
-/* ===== Card Styling ===== */
-.card {
+/* ===== Profile Card ===== */
+.profile-card {
     background-color: #fff;
     padding: 40px 30px;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     text-align: center;
-    width: 250px;
+    width: 100%;
+    max-width: 400px;
 }
 
-.card h2 {
+.profile-card h1 {
     color: #dc3545;
     margin-bottom: 15px;
-    font-weight: 500;
 }
 
-.card h1 {
-    font-size: 36px;
+.profile-card h2 {
     color: #333;
-    margin: 0;
+    font-weight: 400;
 }
 
 /* ===== Responsive ===== */
@@ -122,10 +119,5 @@ body {
 
     .sidebar {
         width: 100%;
-    }
-
-    .content {
-        flex-direction: column;
-        align-items: center;
     }
 }

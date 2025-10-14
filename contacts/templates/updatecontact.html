@@ -1,29 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update Contact</title>
+    <link rel="stylesheet" href="{% static 'css/updatecontact.css' %}">
 </head>
 <body>
-    {% if error %}
-        <p>{{error}}</p>
-    {% endif %}
-    <form method="post">
-        {% csrf_token %}
-        <label>Name</label>
-        <input type="text" name="user_name" value="{{contact.name}}">
-        <label>Contact no</label>
-        <input type="number" name="user_number" value="{{contact.number}}">
-        <button>Update</button>
-    </form>
-    <button><a 
-        if request.user.is_superuser:
-            href="{% url 'userslist' %}"
-        else:
-            href="{% url 'home' %}"        
-        
-        >Go back</a></button>
-    
+    <div class="container">
+        <h1>Update Contact</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <label>Name</label>
+            <input type="text" name="user_name" value="{{ contact.name }}" required>
+
+            <label>Contact No</label>
+            <input type="number" name="user_number" value="{{ contact.number }}" required>
+
+            <button type="submit">Update</button>
+        </form>
+
+        <div class="back-button">
+            {% if request.user.is_superuser %}
+                <a href="{% url 'userslist' %}"><button>Go Back</button></a>
+            {% else %}
+                <a href="{% url 'home' %}"><button>Go Back</button></a>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>

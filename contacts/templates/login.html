@@ -1,24 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-    <h1>Sign in</h1>
-    {% if error %}
-        <p>{{error}}</p>
-    {% endif %}
-    <form action="" method="post">
-        {% csrf_token %}
-        <label>Name</label>
-        <input type="text" name="username">
-        <label>Password</label>
-        <input type="password" name="password">
-        <button type="submit">Submit</button>
-    </form>
-    
-    <p>Dont have an account ? <a href="{% url 'signup' %}">signup</a></p>
+    <div class="login-container">
+        <h1>Sign In</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter your username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <p class="signup-link">Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+    </div>
 </body>
 </html>

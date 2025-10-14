@@ -1,23 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update User</title>
+    <link rel="stylesheet" href="{% static 'css/updateuser.css' %}">
 </head>
 <body>
-    {% if error %}
-        <p>{{error}}</p>
-    {% endif %}
-    <form method="post">
-        {% csrf_token %}
-        <label>Name</label>
-        <input type="text" name="user_name" value="{{user.username}}">
-        <label>Contact no</label>
-        <input type="number" name="user_number" value="{{user.phonenumber}}">
-        <button>Update</button>
-    </form>
-    <button><a href="{% url 'userslist' %}">Go back</a></button>
-    
+    <div class="container">
+        <h1>Update User</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <label>Name</label>
+            <input type="text" name="user_name" value="{{ user.username }}" required>
+
+            <label>Contact No</label>
+            <input type="number" name="user_number" value="{{ user.phonenumber }}" required>
+
+            <button type="submit">Update</button>
+        </form>
+
+        <div class="back-button">
+            <a href="{% url 'userslist' %}"><button>Go Back</button></a>
+        </div>
+    </div>
 </body>
 </html>

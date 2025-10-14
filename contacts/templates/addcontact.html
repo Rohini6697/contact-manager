@@ -1,25 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add New Contact</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{% static 'css/addcontact.css' %}">
 </head>
 <body>
-    {% if error %}
-        <p>{{error}}</p>
-    {% endif %}
-    <form action="{% url 'add_new_contact' %}" method="post">
-        {% csrf_token %}
-        <label>Name</label>
-        <input type="text" name="user_name">
-        <label>Contact no</label>
-        <input type="number" name="user_number">
-        <label>Email</label>
-        <input type="email" name="user_email">
-        <button>Add</button>
-    </form>
-    <button><a href="{% url 'home' %}">Go back</a></button>
-    
+
+    <div class="form-container">
+        <h2>Add New Contact</h2>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        
+        <form action="{% url 'add_new_contact' %}" method="post">
+            {% csrf_token %}
+            <label>Name</label>
+            <input type="text" name="user_name" required>
+
+            <label>Contact Number</label>
+            <input type="number" name="user_number" required>
+
+            <label>Email</label>
+            <input type="email" name="user_email" required>
+
+            <button type="submit">Add Contact</button>
+        </form>
+
+        <a href="{% url 'home' %}" class="back-btn">Go Back</a>
+    </div>
+
 </body>
 </html>
