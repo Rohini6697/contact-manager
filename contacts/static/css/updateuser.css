@@ -1,92 +1,94 @@
-/* ===== Global ===== */
+/* Luxury Old-Money Theme */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fb;
+    margin: 0;
+    padding: 0;
+    background: #f9f5ef;
+    font-family: "Playfair Display", serif;
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
-    margin: 0;
+    align-items: center;
+    height: 100vh;
+    color: #3a2f2f;
 }
 
-/* ===== Container ===== */
+/* Container Box */
 .container {
-    background-color: #fff;
-    padding: 40px 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px;
+    width: 380px;
+    background: #ffffff;
+    padding: 40px;
+    border: 2px solid #d8c9a8;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     text-align: center;
 }
 
-/* ===== Header ===== */
-h1 {
-    color: #dc3545;
-    margin-bottom: 25px;
+.container h1 {
+    font-size: 28px;
+    font-weight: 600;
 }
 
-/* ===== Error Message ===== */
-.error {
-    color: #d9534f;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-/* ===== Form Styling ===== */
-form label {
+/* Form */
+label {
     display: block;
     text-align: left;
-    margin-top: 15px;
-    font-weight: 500;
-    color: #333;
-}
-
-form input {
-    width: 100%;
-    padding: 10px 12px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
     font-size: 15px;
+    margin-top: 12px;
+    margin-bottom: 6px;
 }
 
-form input:focus {
-    border-color: #dc3545;
-    outline: none;
-}
-
-form button {
+input {
     width: 100%;
-    background-color: #dc3545;
-    color: #fff;
     padding: 12px;
-    border: none;
+    border: 1px solid #c7b693;
     border-radius: 8px;
-    margin-top: 20px;
+    background: #fffdfa;
+    font-size: 15px;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 12px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #b59d72;
+    box-shadow: 0px 0px 6px rgba(181,157,114,0.4);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #e5d5b8;
+    border: 1px solid #b8a079;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-family: "Playfair Display", serif;
+    transition: 0.3s;
+    margin-top: 10px;
 }
 
-form button:hover {
-    background-color: #b02a37;
+button:hover {
+    background: #d4c09a;
 }
 
-/* ===== Back Button ===== */
+/* Back Button */
 .back-button {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.back-button button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
+.back-button a button {
+    background: #f1eadb;
+    border: 1px solid #c8b796;
 }
 
-.back-button button:hover {
-    background-color: #0056b3;
+.back-button a button:hover {
+    background: #e5d8bf;
+}
+
+/* Error Text */
+.error {
+    color: #8c4035;
+    font-size: 14px;
+    margin-bottom: 10px;
 }

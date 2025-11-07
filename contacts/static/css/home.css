@@ -1,134 +1,117 @@
-/* ===== Global ===== */
+/* Old-money luxury theme for User Dashboard */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fb;
+    font-family: "Times New Roman", serif;
+    background-color: #f6f2e9;
     margin: 0;
     padding: 0;
 }
 
-/* ===== Navigation ===== */
+/* Navbar */
 nav {
+    background: #ffffff;
+    padding: 15px 25px;
+    border-bottom: 2px solid #c4b89b;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #dc3545;
-    padding: 15px 40px;
-    color: #fff;
 }
 
 nav h1 {
     font-size: 22px;
+    font-weight: bold;
+    color: #3c3b3a;
     margin: 0;
 }
 
 .logout-btn {
-    text-decoration: none;
-    background-color: #fff;
-    color: #dc3545;
-    padding: 8px 18px;
+    background-color: #8c7a5b;
+    color: white;
+    padding: 8px 14px;
     border-radius: 6px;
-    font-weight: 500;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
     transition: 0.3s;
 }
 
 .logout-btn:hover {
-    background-color: #f8d7da;
+    background-color: #6e5f48;
 }
 
-/* ===== Container ===== */
+/* Main Container */
 .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+    padding: 30px;
 }
 
-/* ===== Add Button ===== */
 .add-btn {
     display: inline-block;
+    background-color: #8c7a5b;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
     text-decoration: none;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
     margin-bottom: 20px;
     transition: 0.3s;
 }
 
 .add-btn:hover {
-    background-color: #0056b3;
+    background-color: #6e5f48;
 }
 
-/* ===== Table Styling ===== */
+/* Table */
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 10px;
+    background: #ffffff;
+    border: 2px solid #c4b89b;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-thead th {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 14px 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
+table th,
+table td {
+    padding: 14px;
+    border-bottom: 1px solid #d6ccb9;
+    text-align: left;
+    font-size: 15px;
+    color: #3c3b3a;
 }
 
-tbody td {
-    padding: 12px 10px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
+table thead {
+    background-color: #e9e3d6;
+    font-weight: bold;
 }
 
-tbody tr:hover td {
-    background-color: #f9f9f9;
-}
-
-/* ===== Action Buttons ===== */
+/* Action Buttons */
 .update-btn,
 .delete-btn {
-    text-decoration: none;
-    padding: 6px 12px;
+    padding: 8px 12px;
     border-radius: 6px;
-    color: #fff;
-    margin: 0 5px;
-    font-size: 14px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
     transition: 0.3s;
+    font-size: 14px;
 }
 
 .update-btn {
-    background-color: #007bff;
+    background-color: #8c7a5b;
+    color: white;
 }
 
 .update-btn:hover {
-    background-color: #0056b3;
+    background-color: #6e5f48;
 }
 
 .delete-btn {
-    background-color: #dc3545;
+    background-color: #b55a4a;
+    color: white;
+    margin-left: 6px;
 }
 
 .delete-btn:hover {
-    background-color: #b02a37;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    .update-btn, .delete-btn {
-        padding: 4px 8px;
-        font-size: 13px;
-    }
+    background-color: #8c3f31;
 }

@@ -1,28 +1,32 @@
-/* ===== Global ===== */
+/* Luxury Old-Money Admin Panel */
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fb;
+    padding: 0;
+    background: #f9f5ef;
+    font-family: "Playfair Display", serif;
+    display: flex;
+    height: 100vh;
+    color: #3a2f2f;
 }
 
-/* ===== Dashboard Layout ===== */
+/* Layout */
 .dashboard {
     display: flex;
-    min-height: 100vh;
+    width: 100%;
 }
 
-/* ===== Sidebar ===== */
+/* Sidebar */
 .sidebar {
-    width: 220px;
-    background-color: #dc3545;
-    color: #fff;
-    padding: 20px;
-    box-sizing: border-box;
+    width: 230px;
+    background: #f3eadc;
+    padding: 25px;
+    border-right: 2px solid #d9c7a5;
 }
 
 .sidebar h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
 .sidebar ul {
@@ -31,124 +35,114 @@ body {
 }
 
 .sidebar ul li {
-    margin: 15px 0;
+    margin: 12px 0;
 }
 
 .sidebar ul li a {
-    color: #fff;
     text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 6px;
+    color: #4d3e2e;
+    font-size: 16px;
     transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background-color: #b02a37;
+    color: #b89b6b;
 }
 
-/* ===== Main Area ===== */
+/* Main Content Area */
 .main {
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
-/* ===== Nav Bar ===== */
 .topnav {
-    background-color: #fff;
-    padding: 15px 30px;
+    background: #efe5d3;
+    padding: 15px 20px;
+    border-bottom: 2px solid #d9c7a5;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 .topnav h1 {
-    margin: 0;
-    font-size: 20px;
-    color: #333;
+    font-size: 22px;
 }
 
 .logout-btn {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 6px;
+    background: #e5d5b8;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #b8a079;
+    font-size: 15px;
     text-decoration: none;
-    font-weight: 500;
+    color: #392f21;
+    font-family: "Playfair Display", serif;
+    transition: 0.3s;
 }
 
 .logout-btn:hover {
-    background-color: #b02a37;
+    background: #d4c09a;
 }
 
-/* ===== Content ===== */
+/* Content */
 .content {
     padding: 30px;
-    overflow-x: auto;
 }
 
-/* ===== Table Styling ===== */
+.content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
 .user-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 10px;
+    background: #ffffff;
+    border: 2px solid #d8c9a8;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.user-table th, .user-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
+    font-size: 16px;
 }
 
 .user-table th {
-    background-color: #dc3545;
-    color: #fff;
+    background: #f4ead7;
+    padding: 12px;
+    border-bottom: 2px solid #d8c9a8;
+}
+
+.user-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eadfc8;
 }
 
 .user-table tr:hover {
-    background-color: #f1f1f1;
+    background: #f8f2e6;
 }
 
-/* ===== Action Buttons ===== */
-.update-btn {
-    background-color: #ffc107;
+/* Buttons */
+.update-btn, .delete-btn {
+    padding: 8px 14px;
     border: none;
-    padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
-    color: #fff;
-    margin-right: 5px;
+    font-family: "Playfair Display", serif;
+    transition: 0.3s;
+}
+
+.update-btn {
+    background: #e5d5b8;
+    border: 1px solid #b8a079;
 }
 
 .update-btn:hover {
-    background-color: #e0a800;
+    background: #d4c09a;
 }
 
 .delete-btn {
-    background-color: #dc3545;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #fff;
+    background: #e7c8c8;
+    border: 1px solid #b58a8a;
 }
 
 .delete-btn:hover {
-    background-color: #b02a37;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
-    .dashboard {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
+    background: #d5b3b3;
 }

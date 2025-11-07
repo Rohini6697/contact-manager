@@ -1,28 +1,33 @@
-/* ===== Global ===== */
+/* Elegant Old-Money Theme */
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fb;
+    font-family: "Playfair Display", serif;
+    background: #f9f5ef; /* light cream */
+    color: #3a2f2f;
 }
 
-/* ===== Dashboard Layout ===== */
+/* Dashboard layout */
 .dashboard {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
 }
 
-/* ===== Sidebar ===== */
+/* Sidebar */
 .sidebar {
-    width: 220px;
-    background-color: #dc3545;
-    color: #fff;
-    padding: 20px;
-    box-sizing: border-box;
+    width: 240px;
+    background: #f5f0e6;
+    border-right: 2px solid #d8c9a8;
+    padding: 25px;
 }
 
 .sidebar h2 {
-    text-align: center;
+    font-size: 22px;
     margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #c5b28a;
+    padding-bottom: 10px;
+    color: #3a2f2f;
 }
 
 .sidebar ul {
@@ -31,93 +36,85 @@ body {
 }
 
 .sidebar ul li {
-    margin: 15px 0;
+    margin: 18px 0;
 }
 
 .sidebar ul li a {
-    color: #fff;
     text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 6px;
+    color: #3a2f2f;
+    font-size: 18px;
     transition: 0.3s;
+    padding: 5px 0;
+    display: inline-block;
 }
 
 .sidebar ul li a:hover {
-    background-color: #b02a37;
+    color: #a38753; /* gold shade */
 }
 
-/* ===== Main Area ===== */
+/* Main area */
 .main {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* ===== Nav Bar ===== */
+/* Top Navbar */
 .topnav {
-    background-color: #fff;
-    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    padding: 18px 30px;
+    background: #fdfbf7;
+    border-bottom: 2px solid #d8c9a8;
 }
 
 .topnav h1 {
-    margin: 0;
-    font-size: 20px;
-    color: #333;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .logout-btn {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 6px;
     text-decoration: none;
-    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #bca67a;
+    background: #e5d5b8;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 .logout-btn:hover {
-    background-color: #b02a37;
+    background: #d4c09a;
 }
 
-/* ===== Content ===== */
+/* Content area */
 .content {
-    padding: 40px;
+    flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-/* ===== Profile Card ===== */
+/* Profile card */
 .profile-card {
-    background-color: #fff;
-    padding: 40px 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: #ffffff;
+    border: 2px solid #d8c9a8;
+    padding: 40px 60px;
+    border-radius: 12px;
     text-align: center;
-    width: 100%;
-    max-width: 400px;
+    max-width: 450px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
 .profile-card h1 {
-    color: #dc3545;
-    margin-bottom: 15px;
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .profile-card h2 {
-    color: #333;
-    font-weight: 400;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
-    .dashboard {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
+    font-size: 18px;
+    font-weight: 500;
+    color: #6b5e52;
 }

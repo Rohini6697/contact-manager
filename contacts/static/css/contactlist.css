@@ -1,27 +1,28 @@
-/* ===== Global ===== */
+/* Old-money luxury style for Contact Manager */
 body {
+    font-family: "Times New Roman", serif;
+    background-color: #f6f2e9;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fb;
+    padding: 0;
 }
 
-/* ===== Dashboard Layout ===== */
 .dashboard {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
 }
 
-/* ===== Sidebar ===== */
+/* Sidebar */
 .sidebar {
-    width: 220px;
-    background-color: #dc3545;
-    color: #fff;
+    width: 240px;
+    background-color: #e8e1d4;
+    border-right: 2px solid #c4b89b;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .sidebar h2 {
-    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #3c3b3a;
     margin-bottom: 20px;
 }
 
@@ -31,124 +32,122 @@ body {
 }
 
 .sidebar ul li {
-    margin: 15px 0;
+    margin-bottom: 15px;
 }
 
 .sidebar ul li a {
-    color: #fff;
     text-decoration: none;
+    font-size: 16px;
+    color: #4c4b4a;
+    font-weight: 600;
+    padding: 8px;
     display: block;
-    padding: 10px;
     border-radius: 6px;
     transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background-color: #b02a37;
+    background-color: #d6ccb9;
 }
 
-/* ===== Main Area ===== */
+/* Top Nav */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #ffffff;
+    border-bottom: 2px solid #c4b89b;
+}
+
+.topnav h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3c3b3a;
+}
+
+.logout-btn {
+    background-color: #8c7a5b;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #6e5f48;
+}
+
+/* Main content */
 .main {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* ===== Nav Bar ===== */
-.topnav {
-    background-color: #fff;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.topnav h1 {
-    margin: 0;
-    font-size: 20px;
-    color: #333;
-}
-
-.logout-btn {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.logout-btn:hover {
-    background-color: #b02a37;
-}
-
-/* ===== Content ===== */
 .content {
-    padding: 30px;
-    overflow-x: auto;
+    padding: 25px;
 }
 
-/* ===== Table Styling ===== */
+.content h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #3c3b3a;
+    margin-bottom: 20px;
+}
+
+/* Table */
 .contact-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 10px;
+    background: #ffffff;
+    border: 2px solid #c4b89b;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.contact-table th, .contact-table td {
-    padding: 12px 15px;
+.contact-table th,
+.contact-table td {
+    padding: 14px;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #d6ccb9;
+    font-size: 15px;
+    color: #3c3b3a;
 }
 
-.contact-table th {
-    background-color: #dc3545;
-    color: #fff;
+.contact-table thead {
+    background-color: #e9e3d6;
+    font-weight: bold;
 }
 
-.contact-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* ===== Action Buttons ===== */
-.update-btn {
-    background-color: #ffc107;
-    border: none;
-    padding: 6px 12px;
+/* Buttons */
+.update-btn,
+.delete-btn {
+    padding: 8px 12px;
     border-radius: 6px;
+    border: none;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.update-btn {
+    background-color: #8c7a5b;
     color: #fff;
-    margin-right: 5px;
 }
 
 .update-btn:hover {
-    background-color: #e0a800;
+    background-color: #6e5f48;
 }
 
 .delete-btn {
-    background-color: #dc3545;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
+    background-color: #b55a4a;
     color: #fff;
+    margin-left: 6px;
 }
 
 .delete-btn:hover {
-    background-color: #b02a37;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
-    .dashboard {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
+    background-color: #8c3f31;
 }
