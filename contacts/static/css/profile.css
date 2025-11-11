@@ -16,18 +16,16 @@ body {
 /* Sidebar */
 .sidebar {
     width: 240px;
-    background: #f5f0e6;
-    border-right: 2px solid #d8c9a8;
-    padding: 25px;
+    background-color: #e8e1d4;
+    border-right: 2px solid #c4b89b;
+    padding: 20px;
 }
 
 .sidebar h2 {
     font-size: 22px;
+    font-weight: bold;
+    color: #3c3b3a;
     margin-bottom: 20px;
-    font-weight: 600;
-    border-bottom: 1px solid #c5b28a;
-    padding-bottom: 10px;
-    color: #3a2f2f;
 }
 
 .sidebar ul {
@@ -36,21 +34,24 @@ body {
 }
 
 .sidebar ul li {
-    margin: 18px 0;
+    margin-bottom: 15px;
 }
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #3a2f2f;
-    font-size: 18px;
+    font-size: 16px;
+    color: #4c4b4a;
+    font-weight: 600;
+    padding: 8px;
+    display: block;
+    border-radius: 6px;
     transition: 0.3s;
-    padding: 5px 0;
-    display: inline-block;
 }
 
 .sidebar ul li a:hover {
-    color: #a38753; /* gold shade */
+    background-color: #d6ccb9;
 }
+
 
 /* Main area */
 .main {

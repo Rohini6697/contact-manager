@@ -1,27 +1,33 @@
-/* ===== Global ===== */
+/* Old-Money Luxury Admin Dashboard */
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fb;
-}
-
-/* ===== Dashboard Layout ===== */
-.dashboard {
+    padding: 0;
+    background: #f9f5ef;
+    font-family: "Playfair Display", serif;
     display: flex;
     min-height: 100vh;
+    color: #3a2f2f;
 }
 
-/* ===== Sidebar ===== */
+/* Layout */
+.dashboard {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
 .sidebar {
-    width: 220px;
-    background-color: #dc3545;
-    color: #fff;
+    width: 240px;
+    background-color: #e8e1d4;
+    border-right: 2px solid #c4b89b;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .sidebar h2 {
-    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #3c3b3a;
     margin-bottom: 20px;
 }
 
@@ -31,101 +37,89 @@ body {
 }
 
 .sidebar ul li {
-    margin: 15px 0;
+    margin-bottom: 15px;
 }
 
 .sidebar ul li a {
-    color: #fff;
     text-decoration: none;
+    font-size: 16px;
+    color: #4c4b4a;
+    font-weight: 600;
+    padding: 8px;
     display: block;
-    padding: 10px;
     border-radius: 6px;
     transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background-color: #b02a37;
+    background-color: #d6ccb9;
 }
 
-/* ===== Main Area ===== */
+/* Main Container */
 .main {
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
-/* ===== Nav Bar ===== */
+/* Top Navigation */
 .topnav {
-    background-color: #fff;
-    padding: 15px 30px;
+    background: #efe5d3;
+    padding: 15px 25px;
+    border-bottom: 2px solid #d9c7a5;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 .topnav h1 {
-    margin: 0;
-    font-size: 20px;
-    color: #333;
+    font-size: 22px;
 }
 
 .logout-btn {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 6px;
+    background: #e5d5b8;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #b8a079;
     text-decoration: none;
-    font-weight: 500;
+    font-size: 15px;
+    color: #392f21;
+    transition: 0.3s ease;
 }
 
 .logout-btn:hover {
-    background-color: #b02a37;
+    background: #d4c09a;
 }
 
-/* ===== Content ===== */
+/* Dashboard Content */
 .content {
-    padding: 40px;
+    padding: 35px;
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 25px;
 }
 
-/* ===== Card Styling ===== */
+/* Dashboard Cards */
 .card {
-    background-color: #fff;
-    padding: 40px 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: white;
+    border: 2px solid #d8c9a8;
+    border-radius: 12px;
+    padding: 25px;
+    flex: 1;
     text-align: center;
-    width: 250px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    background: #faf4e9;
+    transform: translateY(-3px);
 }
 
 .card h2 {
-    color: #dc3545;
-    margin-bottom: 15px;
-    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .card h1 {
-    font-size: 36px;
-    color: #333;
-    margin: 0;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
-    .dashboard {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
+    font-size: 40px;
+    font-weight: bold;
+    color: #3b3327;
 }

@@ -18,15 +18,17 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 230px;
-    background: #f3eadc;
-    padding: 25px;
-    border-right: 2px solid #d9c7a5;
+    width: 240px;
+    background-color: #e8e1d4;
+    border-right: 2px solid #c4b89b;
+    padding: 20px;
 }
 
 .sidebar h2 {
     font-size: 22px;
-    margin-bottom: 15px;
+    font-weight: bold;
+    color: #3c3b3a;
+    margin-bottom: 20px;
 }
 
 .sidebar ul {
@@ -35,18 +37,22 @@ body {
 }
 
 .sidebar ul li {
-    margin: 12px 0;
+    margin-bottom: 15px;
 }
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #4d3e2e;
     font-size: 16px;
+    color: #4c4b4a;
+    font-weight: 600;
+    padding: 8px;
+    display: block;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    color: #b89b6b;
+    background-color: #d6ccb9;
 }
 
 /* Main Content Area */

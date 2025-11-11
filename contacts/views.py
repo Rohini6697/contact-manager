@@ -80,8 +80,10 @@ def update_contact(request,id):
     if request.method == 'POST':
         name = request.POST.get('user_name')
         number = request.POST.get('user_number')
+        email = request.POST.get('email')
         contact.name = name
         contact.number = number
+        contact.email = email
         contact.save()
         if request.user.is_superuser:
             return redirect('contactlist')

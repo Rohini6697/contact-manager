@@ -20,6 +20,9 @@
             <label>Name</label>
             <input type="text" name="user_name" value="{{ contact.name }}" required>
 
+            <label>Email</label>
+            <input type="email" name="email" value="{{ contact.email }}" required>
+
             <label>Contact No</label>
             <input type="number" name="user_number" value="{{ contact.number }}" required>
 
@@ -28,7 +31,7 @@
 
         <div class="back-button">
             {% if request.user.is_superuser %}
-                <a href="{% url 'userslist' %}"><button>Go Back</button></a>
+                <a href="{% url 'contactlist' %}"><button>Go Back</button></a>
             {% else %}
                 <a href="{% url 'home' %}"><button>Go Back</button></a>
             {% endif %}
